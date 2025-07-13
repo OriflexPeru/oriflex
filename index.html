@@ -170,8 +170,8 @@
             border-radius: 2px;
         }
 
-        .category-section, .about-section, .contact-section, .features-section {
-            background-color: white;
+        .category-section, .contact-section, .features-section {
+            background-color: white; /* Estas secciones permanecen en blanco para contraste general */
             padding: 3rem;
             margin-bottom: 3rem;
             border-radius: 12px;
@@ -184,8 +184,9 @@
             gap: 2rem;
         }
         
+        /* Estilos generales para los items de grilla (Categorías, Inmobiliaria, Entretenimiento) */
         .grid-item {
-            background-color: var(--tono-claro);
+            background-color: var(--tono-claro); /* Fondo claro para estas secciones */
             border: 1px solid rgba(0,0,0,0.05);
             border-radius: 10px;
             padding: 1.5rem;
@@ -195,6 +196,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: space-between; /* Espacio entre contenido y botones */
         }
 
         .grid-item:hover {
@@ -246,35 +248,96 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
 
-        /* Estilo específico para el botón "Lo quiero" (WhatsApp) */
-        .btn-whatsapp-item {
-            background-color: #25d366;
+        /* --- Estilos ESPECÍFICOS para la sección de PRODUCTOS --- */
+        #productos.category-section {
+            background-color: var(--color-fondo-oscuro); /* Fondo oscuro para la sección de productos */
+            color: var(--color-texto-claro); /* Texto blanco para esta sección */
+            padding: 3rem;
+        }
+
+        #productos .section-heading {
+            color: var(--rojo-claro-secundario); /* Título en rojo claro para destacar */
+        }
+
+        #productos .section-heading::after {
+            background-color: var(--rojo-principal); /* Línea inferior en rojo principal */
+        }
+
+        #productos .grid-item {
+            background-color: var(--gris-oscuro); /* Fondo de la tarjeta de producto más oscuro */
+            color: var(--color-texto-claro); /* Texto dentro de la tarjeta de producto */
+            padding: 1.2rem;
+        }
+        
+        #productos .grid-item h3 {
+            color: var(--rojo-claro-secundario); /* Título del producto en rojo claro */
+            font-size: 1.6rem; /* Un poco más pequeño para una tarjeta compacta */
+            margin-top: 0.8rem;
+        }
+
+        #productos .grid-item p {
+            color: var(--tono-claro); /* Descripción del producto en un tono más suave */
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        #productos .grid-item img {
+            width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+            height: 220px; /* Altura fija para consistencia */
+            object-fit: cover; /* Recorta la imagen si es necesario */
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Grupo de botones para productos */
+        .product-buttons {
+            display: flex;
+            flex-direction: column; /* Botones apilados verticalmente */
+            gap: 0.8rem; /* Espacio entre botones */
+            width: 100%; /* Ocupa todo el ancho de la tarjeta */
+            margin-top: 1rem; /* Espacio superior */
+        }
+
+        /* Estilo del botón "Lo quiero" (WhatsApp) para productos */
+        .btn-lo-quiero-product {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #25d366; /* Verde WhatsApp */
             color: white;
-            padding: 0.8rem 1.8rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             transition: var(--transicion-rapida);
             font-size: 1rem;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            margin-top: 0.5rem;
-            display: inline-block;
         }
 
-        .btn-whatsapp-item:hover {
+        .btn-lo-quiero-product:hover {
             background-color: #1da851;
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
 
-        .grid-item .button-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 100%;
-            align-items: center;
+        .btn-lo-quiero-product .icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
         }
-        
+
+        /* Ajuste para el botón "Ver detalles" en productos */
+        #productos .btn-ver-mas {
+            background-color: var(--rojo-principal); /* Cambiar a rojo principal */
+            width: 100%; /* Ocupa todo el ancho */
+            text-align: center;
+            padding: 0.8rem;
+        }
+
+        #productos .btn-ver-mas:hover {
+            background-color: var(--rojo-claro-secundario);
+        }
+
         /* --- Sección Quiénes Somos (About Us) - AHORA UN MODAL --- */
         /* Estilos base del modal (oculto por defecto) */
         .modal {
@@ -326,18 +389,18 @@
         }
 
         .modal-content::before {
-            background-image: url('https://via.placeholder.com/1920x1080?text=Fondo+Oriflex+Entretenimiento'); /* Imagen 1 */
+            background-image: url('http://googleusercontent.com/file_content/0'); /* Imagen 1: GoDaddy como inspiración */
         }
 
         .modal-content::after {
-            background-image: url('https://via.placeholder.com/1920x1080?text=Fondo+Oriflex+Inmobiliaria'); /* Imagen 2 */
+            background-image: url('http://googleusercontent.com/file_content/1'); /* Imagen 2: Temu como inspiración */
             animation: background-fade 15s infinite alternate; /* Animación de cambio de fondo */
         }
 
         @keyframes background-fade {
-            0% { opacity: 0.1; background-image: url('https://via.placeholder.com/1920x1080?text=Fondo+Oriflex+Inmobiliaria'); }
-            50% { opacity: 0.1; background-image: url('https://via.placeholder.com/1920x1080?text=Fondo+Oriflex+Productos'); }
-            100% { opacity: 0.1; background-image: url('https://via.placeholder.com/1920x1080?text=Fondo+Oriflex+Entretenimiento'); }
+            0% { opacity: 0.1; background-image: url('http://googleusercontent.com/file_content/0'); }
+            50% { opacity: 0.1; background-image: url('http://googleusercontent.com/file_content/1'); }
+            100% { opacity: 0.1; background-image: url('http://googleusercontent.com/file_content/0'); }
         }
 
         .modal-body {
@@ -588,6 +651,9 @@
             .modal-text { font-size: 1.1rem; }
             .modal-categories { flex-direction: column; align-items: center; }
             .modal-category-item { max-width: 80%; }
+            #productos .grid-item img { height: 180px; } /* Ajuste de altura para imágenes de producto */
+            #productos .grid-item h3 { font-size: 1.4rem; }
+            #productos .grid-item p { font-size: 0.9rem; }
         }
 
         @media (max-width: 768px) {
@@ -600,7 +666,6 @@
             main { padding: 0 1rem; margin: 2rem auto; }
             .category-section, .contact-section, .features-section { padding: 2rem; margin-bottom: 2rem; }
             .section-heading { font-size: 2rem; margin-bottom: 2rem; }
-            .about-content { flex-direction: column; }
             .whatsapp-float { padding: 12px 18px; font-size: 1rem; bottom: 15px; right: 15px; }
             .whatsapp-float .icon { font-size: 1.3rem; }
             .btn-conocenos { padding: 1rem 2.5rem; font-size: 1.1rem; }
@@ -612,6 +677,7 @@
             .modal-category-item .icon { font-size: 2.8rem; }
             .modal-category-item h4 { font-size: 1.4rem; }
             .close-button { font-size: 2.5rem; top: 10px; right: 15px; }
+            #productos .grid-item img { height: 150px; }
         }
 
         @media (max-width: 480px) {
@@ -621,6 +687,11 @@
             .grid-item img { height: 150px; }
             .grid-item h3 { font-size: 1.5rem; }
             .btn-conocenos { padding: 0.8rem 2rem; font-size: 1rem; }
+            #productos .grid-item { padding: 1rem; }
+            #productos .grid-item h3 { font-size: 1.2rem; }
+            #productos .grid-item p { font-size: 0.85rem; }
+            .product-buttons { gap: 0.6rem; }
+            .btn-lo-quiero-product, #productos .btn-ver-mas { padding: 0.6rem 1rem; font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -649,9 +720,11 @@
             <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem; color: var(--texto-general);">Sumérgete en un mundo de diversión y contenido exclusivo. Oriflex te trae las últimas novedades para que nunca te aburras.</p>
             <div class="grid-container">
                 <div class="grid-item">
-                    <img src="ChatGPT Image 13 jul 2025, 15_10_24.png" alt="">
-                    <p>Perfiles ilimitado  para disfrutar de tus películas y series favoritas. Estrenos, clásicos y contenido exclusivo.</p>
+                    <img src="ChatGPT Image 13 jul 2025, 15_10_24.png" alt="Películas y Series">
+                    <h3>Películas y Series On-Demand</h3>
+                    <p>Accede a un catálogo ilimitado de tus películas y series favoritas. Estrenos, clásicos y contenido exclusivo.</p>
                     <div class="button-group">
+                        <a href="URL_A_PAGINA_ENTRETENIMIENTO_PELICULAS.html" class="btn-ver-mas">Explorar</a>
                         <a href="https://wa.me/51910104404?text=¡Hola!%20Quiero%20saber%20más%20sobre%20Películas%20y%20Series%20On-Demand%20de%20Oriflex." target="_blank" class="btn-whatsapp-item">Lo quiero</a>
                     </div>
                 </div>
@@ -659,19 +732,28 @@
                     <img src="https://via.placeholder.com/400x250?text=Eventos+Deportivos+Conciertos" alt="Eventos en Vivo">
                     <h3>Eventos y Conciertos en Vivo</h3>
                     <p>No te pierdas nada. Boletos para conciertos, deportes, teatro y experiencias únicas al instante.</p>
-                    <a href="URL_A_PAGINA_ENTRETENIMIENTO_EVENTOS.html" class="btn-ver-mas">Comprar Entradas</a>
+                    <div class="button-group">
+                        <a href="URL_A_PAGINA_ENTRETENIMIENTO_EVENTOS.html" class="btn-ver-mas">Comprar Entradas</a>
+                        <a href="https://wa.me/51910104404?text=¡Hola!%20Quiero%20saber%20más%20sobre%20Eventos%20y%20Conciertos%20en%20Vivo%20de%20Oriflex." target="_blank" class="btn-whatsapp-item">Lo quiero</a>
+                    </div>
                 </div>
                 <div class="grid-item">
                     <img src="https://via.placeholder.com/400x250?text=Videojuegos+Consolas" alt="Juegos y Apps">
                     <h3>Videojuegos y Plataformas Gaming</h3>
                     <p>La mejor selección de videojuegos, noticias, reseñas y acceso a comunidades de jugadores.</p>
-                    <a href="URL_A_PAGINA_ENTRETENIMIENTO_JUEGOS.html" class="btn-ver-mas">Descubrir Juegos</a>
+                    <div class="button-group">
+                        <a href="URL_A_PAGINA_ENTRETENIMIENTO_JUEGOS.html" class="btn-ver-mas">Descubrir Juegos</a>
+                        <a href="https://wa.me/51910104404?text=¡Hola!%20Quiero%20saber%20más%20sobre%20Videojuegos%20y%20Plataformas%20Gaming%20de%20Oriflex." target="_blank" class="btn-whatsapp-item">Lo quiero</a>
+                    </div>
                 </div>
                 <div class="grid-item">
                     <img src="https://via.placeholder.com/400x250?text=Noticias+Entretenimiento" alt="Noticias y Contenido Original">
                     <h3>Noticias y Contenido Original</h3>
                     <p>Mantente informado con las últimas tendencias del mundo del entretenimiento y producciones propias.</p>
-                    <a href="URL_A_PAGINA_ENTRETENIMIENTO_NOTICIAS.html" class="btn-ver-mas">Leer Más</a>
+                    <div class="button-group">
+                        <a href="URL_A_PAGINA_ENTRETENIMIENTO_NOTICIAS.html" class="btn-ver-mas">Leer Más</a>
+                        <a href="https://wa.me/51910104404?text=¡Hola!%20Quiero%20saber%20más%20sobre%20Noticias%20y%20Contenido%20Original%20de%20Oriflex." target="_blank" class="btn-whatsapp-item">Lo quiero</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -684,56 +766,115 @@
                     <img src="https://via.placeholder.com/400x250?text=Casas+Venta" alt="Venta de Propiedades">
                     <h3>Venta de Casas y Apartamentos</h3>
                     <p>Amplia oferta de propiedades en venta. Busca por ubicación, precio y características.</p>
-                    <a href="URL_A_PAGINA_INMOBILIARIA_VENTA.html" class="btn-ver-mas">Ver Propiedades</a>
+                    <div class="button-group">
+                        <a href="URL_A_PAGINA_INMOBILIARIA_VENTA.html" class="btn-ver-mas">Ver Propiedades</a>
+                        <a href="https://wa.me/51910104404?text=¡Hola!%20Quiero%20saber%20más%20sobre%20Venta%20de%20Propiedades%20de%20Oriflex." target="_blank" class="btn-whatsapp-item">Lo quiero</a>
+                    </div>
                 </div>
                 <div class="grid-item">
                     <img src="https://via.placeholder.com/400x250?text=Alquiler+Inmuebles" alt="Alquiler de Apartamentos">
                     <h3>Alquileres Residenciales y Comerciales</h3>
                     <p>Opciones de alquiler para todos los estilos de vida y necesidades de negocio. Facilidad y rapidez.</p>
-                    <a href="URL_A_PAGINA_INMOBILIARIA_ALQUILER.html" class="btn-ver-mas">Buscar Alquiler</a>
+                    <div class="button-group">
+                        <a href="URL_A_PAGINA_INMOBILIARIA_ALQUILER.html" class="btn-ver-mas">Buscar Alquiler</a>
+                        <a href="https://wa.me/51910104404?text=¡Hola!%20Quiero%20saber%20más%20sobre%20Alquileres%20de%20Oriflex." target="_blank" class="btn-whatsapp-item">Lo quiero</a>
+                    </div>
                 </div>
                 <div class="grid-item">
                     <img src="https://via.placeholder.com/400x250?text=Proyectos+Nuevos" alt="Proyectos Inmobiliarios">
                     <h3>Proyectos Inmobiliarios Nuevos</h3>
                     <p>Invierte en el futuro. Descubre desarrollos en construcción con diseños innovadores y amenidades.</p>
-                    <a href="URL_A_PAGINA_INMOBILIARIA_PROYECTOS.html" class="btn-ver-mas">Conocer Proyectos</a>
+                    <div class="button-group">
+                        <a href="URL_A_PAGINA_INMOBILIARIA_PROYECTOS.html" class="btn-ver-mas">Conocer Proyectos</a>
+                        <a href="https://wa.me/51910104404?text=¡Hola!%20Quiero%20saber%20más%20sobre%20Proyectos%20Inmobiliarios%20de%20Oriflex." target="_blank" class="btn-whatsapp-item">Lo quiero</a>
+                    </div>
                 </div>
                 <div class="grid-item">
                     <img src="https://via.placeholder.com/400x250?text=Asesoria+Inmobiliaria" alt="Asesoría y Valoración">
                     <h3>Asesoría y Valoración Inmobiliaria</h3>
                     <p>Expertos a tu disposición para asesorarte en la compra, venta o valoración de tu inmueble.</p>
-                    <a href="URL_A_PAGINA_INMOBILIARIA_ASESORIA.html" class="btn-ver-mas">Solicitar Asesoría</a>
+                    <div class="button-group">
+                        <a href="URL_A_PAGINA_INMOBILIARIA_ASESORIA.html" class="btn-ver-mas">Solicitar Asesoría</a>
+                        <a href="https://wa.me/51910104404?text=¡Hola!%20Quiero%20saber%20más%20sobre%20Asesoría%20Inmobiliaria%20de%20Oriflex." target="_blank" class="btn-whatsapp-item">Lo quiero</a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="productos" class="category-section">
-            <h2 class="section-heading">Productos</h2>
-            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem; color: var(--texto-general);">Explora un marketplace diverso con todo lo que necesitas, desde tecnología hasta moda y hogar. Calidad y variedad al alcance de tu mano.</p>
+            <h2 class="section-heading">Nuestros Productos Destacados</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem; color: var(--tono-claro);">Explora un marketplace diverso con todo lo que necesitas, desde tecnología hasta moda y hogar. Calidad y variedad al alcance de tu mano.</p>
             <div class="grid-container">
                 <div class="grid-item">
-                    <img src="https://via.placeholder.com/400x250?text=Electr%C3%B3nica+y+Gadgets" alt="Electrónica">
-                    <h3>Electrónica y Gadgets</h3>
-                    <p>Las últimas innovaciones tecnológicas. Smartphones, laptops, wearables y dispositivos inteligentes.</p>
-                    <a href="URL_A_PAGINA_PRODUCTOS_ELECTRONICA.html" class="btn-ver-mas">Ver Catálogo</a>
+                    <img src="https://via.placeholder.com/400x280?text=Smartphone+Pro+Ultra" alt="Smartphone Pro Ultra">
+                    <h3>Smartphone Pro Ultra</h3>
+                    <p>Lo último en tecnología móvil con cámara avanzada y batería de larga duración. ¡Conéctate con el futuro!</p>
+                    <div class="product-buttons">
+                        <a href="URL_DETALLES_PRODUCTO_1.html" class="btn-ver-mas">Ver Detalles</a>
+                        <a href="https://wa.me/51910104404?text=¡Hola!%20Me%20interesa%20el%20Smartphone%20Pro%20Ultra%20(ID:%20P001)." target="_blank" class="btn-lo-quiero-product">
+                            <span class="icon">💬</span> Lo quiero
+                        </a>
+                    </div>
                 </div>
+
                 <div class="grid-item">
-                    <img src="https://via.placeholder.com/400x250?text=Moda+Ropa+Calzado" alt="Moda">
-                    <h3>Moda, Ropa y Calzado</h3>
-                    <p>Descubre las tendencias más recientes en indumentaria para todas las edades y estilos.</p>
-                    <a href="URL_A_PAGINA_PRODUCTOS_MODA.html" class="btn-ver-mas">Explorar Moda</a>
+                    <img src="https://via.placeholder.com/400x280?text=Cafetera+Inteligente" alt="Cafetera Inteligente Oriflex">
+                    <h3>Cafetera Inteligente</h3>
+                    <p>Despierta con el aroma de tu café perfecto. Programable y con control desde tu smartphone.</p>
+                    <div class="product-buttons">
+                        <a href="URL_DETALLES_PRODUCTO_2.html" class="btn-ver-mas">Ver Detalles</a>
+                        <a href="https://wa.me/51910104404?text=¡Hola!%20Me%20interesa%20la%20Cafetera%20Inteligente%20(ID:%20P002)." target="_blank" class="btn-lo-quiero-product">
+                            <span class="icon">💬</span> Lo quiero
+                        </a>
+                    </div>
                 </div>
+
                 <div class="grid-item">
-                    <img src="https://via.placeholder.com/400x250?text=Hogar+y+Decoracion" alt="Hogar">
-                    <h3>Hogar y Decoración</h3>
-                    <p>Muebles, electrodomésticos y accesorios para transformar tu hogar en un espacio único y funcional.</p>
-                    <a href="URL_A_PAGINA_PRODUCTOS_HOGAR.html" class="btn-ver-mas">Ver Artículos</a>
+                    <img src="https://via.placeholder.com/400x280?text=Smartwatch+Fitness" alt="Smartwatch Fitness Pro">
+                    <h3>Smartwatch Fitness Pro</h3>
+                    <p>Monitorea tu salud y actividad física con estilo. Resistencia al agua y GPS integrado.</p>
+                    <div class="product-buttons">
+                        <a href="URL_DETALLES_PRODUCTO_3.html" class="btn-ver-mas">Ver Detalles</a>
+                        <a href="https://wa.me/51910104404?text=¡Hola!%20Me%20interesa%20el%20Smartwatch%20Fitness%20Pro%20(ID:%20P003)." target="_blank" class="btn-lo-quiero-product">
+                            <span class="icon">💬</span> Lo quiero
+                        </a>
+                    </div>
                 </div>
+
                 <div class="grid-item">
-                    <img src="https://via.placeholder.com/400x250?text=Salud+Belleza" alt="Salud y Belleza">
-                    <h3>Salud y Belleza</h3>
-                    <p>Productos de cuidado personal, cosméticos, suplementos y todo para tu bienestar.</p>
-                    <a href="URL_A_PAGINA_PRODUCTOS_SALUD.html" class="btn-ver-mas">Comprar Ahora</a>
+                    <img src="https://via.placeholder.com/400x280?text=Set+Cuidado+Facial+Premium" alt="Set Cuidado Facial Premium">
+                    <h3>Set Cuidado Facial Premium</h3>
+                    <p>Rutina completa para una piel radiante. Ingredientes naturales y resultados visibles.</p>
+                    <div class="product-buttons">
+                        <a href="URL_DETALLES_PRODUCTO_4.html" class="btn-ver-mas">Ver Detalles</a>
+                        <a href="https://wa.me/51910104404?text=¡Hola!%20Me%20interesa%20el%20Set%20Cuidado%20Facial%20Premium%20(ID:%20P004)." target="_blank" class="btn-lo-quiero-product">
+                            <span class="icon">💬</span> Lo quiero
+                        </a>
+                    </div>
+                </div>
+
+                 <div class="grid-item">
+                    <img src="https://via.placeholder.com/400x280?text=Auriculares+Inalambricos+HD" alt="Auriculares Inalámbricos HD">
+                    <h3>Auriculares Inalámbricos HD</h3>
+                    <p>Experiencia de audio inmersiva con cancelación de ruido. Perfectos para música y llamadas.</p>
+                    <div class="product-buttons">
+                        <a href="URL_DETALLES_PRODUCTO_5.html" class="btn-ver-mas">Ver Detalles</a>
+                        <a href="https://wa.me/51910104404?text=¡Hola!%20Me%20interesan%20los%20Auriculares%20Inalámbricos%20HD%20(ID:%20P005)." target="_blank" class="btn-lo-quiero-product">
+                            <span class="icon">💬</span> Lo quiero
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/400x280?text=Mochila+Antirrobo+USB" alt="Mochila Antirrobo con USB">
+                    <h3>Mochila Antirrobo con USB</h3>
+                    <p>Diseño seguro y práctico con puerto de carga USB. Ideal para viajeros y estudiantes.</p>
+                    <div class="product-buttons">
+                        <a href="URL_DETALLES_PRODUCTO_6.html" class="btn-ver-mas">Ver Detalles</a>
+                        <a href="https://wa.me/51910104404?text=¡Hola!%20Me%20interesa%20la%20Mochila%20Antirrobo%20con%20USB%20(ID:%20P006)." target="_blank" class="btn-lo-quiero-product">
+                            <span class="icon">💬</span> Lo quiero
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -856,6 +997,13 @@
             // Funcionalidad de la barra de navegación (se mantiene igual)
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
+                    // Prevenir el comportamiento predeterminado solo si es un ancla interna
+                    if (this.hash !== "") {
+                        e.preventDefault();
+                        document.querySelector(this.hash).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
                     navLinks.forEach(nav => nav.classList.remove('active'));
                     this.classList.add('active');
                 });
@@ -864,10 +1012,13 @@
             const sections = document.querySelectorAll('main section');
             window.addEventListener('scroll', () => {
                 let current = '';
-                const nav = document.querySelector('nav'); // Asegúrate de que 'nav' esté definido
+                const nav = document.querySelector('nav');
+                const navHeight = nav.offsetHeight;
+
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - nav.offsetHeight - 50) { 
+                    // Se activa cuando la parte superior de la sección está por encima de la mitad de la ventana visible
+                    if (window.scrollY + window.innerHeight / 2 >= sectionTop) {
                         current = '#' + section.getAttribute('id');
                     }
                 });
@@ -880,11 +1031,12 @@
                 });
             });
 
-            const initialHash = window.location.hash || '#entretenimiento'; // Cambiado a Entretenimiento como inicio
+            const initialHash = window.location.hash || '#entretenimiento';
             const initialActiveLink = document.querySelector(`nav a[href="${initialHash}"]`);
             if (initialActiveLink) {
                 initialActiveLink.classList.add('active');
             }
+
 
             // --- Funcionalidad del Modal "Quiénes Somos" ---
             // Abrir el modal
