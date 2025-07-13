@@ -236,6 +236,7 @@
             transition: var(--transicion-rapida);
             font-size: 1rem;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin-top: 1rem; /* Espacio superior para el botón */
         }
 
         .btn-ver-mas:hover {
@@ -244,6 +245,36 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
 
+        /* Estilo específico para el botón "Lo quiero" (WhatsApp) */
+        .btn-whatsapp-item {
+            background-color: #25d366; /* Verde de WhatsApp */
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transicion-rapida);
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin-top: 0.5rem; /* Menos margen que el botón 'ver-mas' si van juntos */
+            display: inline-block; /* Para que se comporte como botón en línea */
+        }
+
+        .btn-whatsapp-item:hover {
+            background-color: #1da851; /* Verde más oscuro al pasar el mouse */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Flexbox para los botones dentro de grid-item para que se apilen */
+        .grid-item .button-group {
+            display: flex;
+            flex-direction: column; /* Apila los botones verticalmente */
+            gap: 10px; /* Espacio entre botones */
+            width: 100%; /* Ocupa el ancho completo del item */
+            align-items: center; /* Centra los botones */
+        }
+        
         /* --- Sección Quiénes Somos (About Us) --- */
         .about-content {
             display: flex;
@@ -535,7 +566,10 @@
                     <img src="ChatGPT Image 13 jul 2025, 15_10_24.png" alt="Películas y Series">
                     <h3>Películas y Series On-Demand</h3>
                     <p>Accede a un catálogo ilimitado de tus películas y series favoritas. Estrenos, clásicos y contenido exclusivo.</p>
-                    <a href="URL_A_PAGINA_ENTRETENIMIENTO_PELICULAS.html" class="btn-ver-mas">Explorar</a>
+                    <div class="button-group">
+                        <a href="URL_A_PAGINA_ENTRETENIMIENTO_PELICULAS.html" class="btn-ver-mas">Explorar</a>
+                        <a href="https://wa.me/51910104404?text=¡Hola!%20Quiero%20saber%20más%20sobre%20Películas%20y%20Series%20On-Demand%20de%20Oriflex." target="_blank" class="btn-whatsapp-item">Lo quiero</a>
+                    </div>
                 </div>
                 <div class="grid-item">
                     <img src="https://via.placeholder.com/400x250?text=Eventos+Deportivos+Conciertos" alt="Eventos en Vivo">
