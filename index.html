@@ -17,12 +17,14 @@
             --sombra-fuerte: 0 8px 25px rgba(0,0,0,0.15);
             --sombra-suave: 0 4px 15px rgba(0,0,0,0.08);
             --transicion-rapida: all 0.3s ease;
+            --color-fondo-oscuro: #1A1A1A; /* Un gris aún más oscuro para fondos de streaming */
+            --color-texto-claro: #FFFFFF; /* Blanco puro para letras en fondos oscuros */
         }
 
         body {
             margin: 0;
             font-family: 'Open Sans', sans-serif;
-            background-color: var(--tono-claro); /* Fondo claro de la marca */
+            background-color: var(--tono-claro);
             color: var(--texto-general);
             line-height: 1.6;
             scroll-behavior: smooth;
@@ -36,7 +38,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1920x600?text=Fondo+Inspirador+Oriflex'); /* Imagen de fondo para el hero */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1920x600?text=Fondo+Inspirador+Oriflex');
             background-size: cover;
             background-position: center;
         }
@@ -48,8 +50,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to right, var(--rojo-principal), var(--rojo-claro-secundario)); /* Degradado de colores de la marca */
-            opacity: 0.2; /* Opacidad para que se vea la imagen de fondo */
+            background: linear-gradient(to right, var(--rojo-principal), var(--rojo-claro-secundario));
+            opacity: 0.2;
             z-index: 0;
         }
 
@@ -64,14 +66,14 @@
             max-width: 180px;
             height: auto;
             margin-bottom: 1.5rem;
-            filter: drop-shadow(0 0 10px rgba(255,255,255,0.5)); /* Sombra para el logo */
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
         }
 
         .hero-content h1 {
             font-family: 'Montserrat', sans-serif;
             font-size: 3.8rem;
             margin: 0.5rem 0 1rem;
-            color: var(--rojo-claro-secundario); /* Color de la marca */
+            color: var(--rojo-claro-secundario);
             text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
         }
 
@@ -94,14 +96,14 @@
             font-size: 1.2rem;
             box-shadow: var(--sombra-fuerte);
             transition: var(--transicion-rapida);
-            animation: pulse 2s infinite; /* Animación para el botón CTA */
+            animation: pulse 2s infinite;
         }
 
         .hero-button:hover {
             background-color: var(--rojo-claro-secundario);
             transform: translateY(-5px);
             box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-            animation: none; /* Detiene la animación al pasar el mouse */
+            animation: none;
         }
 
         @keyframes pulse {
@@ -118,7 +120,7 @@
             gap: 2.5rem;
             padding: 1rem 0;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            position: sticky; /* Sticky nav */
+            position: sticky;
             top: 0;
             z-index: 1000;
         }
@@ -176,7 +178,6 @@
             box-shadow: var(--sombra-fuerte);
         }
         
-        /* --- Grid de Contenido (Categorías y Características) --- */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -203,8 +204,8 @@
         
         .grid-item img {
             max-width: 100%;
-            height: 200px; /* Altura fija para uniformidad */
-            object-fit: cover; /* Asegura que la imagen cubra el espacio */
+            height: 200px;
+            object-fit: cover;
             border-radius: 8px;
             margin-bottom: 1.5rem;
             display: block;
@@ -222,12 +223,12 @@
             font-size: 1rem;
             color: var(--texto-general);
             margin-bottom: 1.5rem;
-            flex-grow: 1; /* Permite que el párrafo crezca para alinear botones */
+            flex-grow: 1;
         }
         
         .btn-ver-mas {
             display: inline-block;
-            background-color: var(--gris-oscuro); /* Botón con color oscuro */
+            background-color: var(--gris-oscuro);
             color: white;
             padding: 0.8rem 1.8rem;
             border-radius: 50px;
@@ -236,7 +237,7 @@
             transition: var(--transicion-rapida);
             font-size: 1rem;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            margin-top: 1rem; /* Espacio superior para el botón */
+            margin-top: 1rem;
         }
 
         .btn-ver-mas:hover {
@@ -247,7 +248,7 @@
 
         /* Estilo específico para el botón "Lo quiero" (WhatsApp) */
         .btn-whatsapp-item {
-            background-color: #25d366; /* Verde de WhatsApp */
+            background-color: #25d366;
             color: white;
             padding: 0.8rem 1.8rem;
             border-radius: 50px;
@@ -256,90 +257,176 @@
             transition: var(--transicion-rapida);
             font-size: 1rem;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            margin-top: 0.5rem; /* Menos margen que el botón 'ver-mas' si van juntos */
-            display: inline-block; /* Para que se comporte como botón en línea */
+            margin-top: 0.5rem;
+            display: inline-block;
         }
 
         .btn-whatsapp-item:hover {
-            background-color: #1da851; /* Verde más oscuro al pasar el mouse */
+            background-color: #1da851;
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
 
-        /* Flexbox para los botones dentro de grid-item para que se apilen */
         .grid-item .button-group {
             display: flex;
-            flex-direction: column; /* Apila los botones verticalmente */
-            gap: 10px; /* Espacio entre botones */
-            width: 100%; /* Ocupa el ancho completo del item */
-            align-items: center; /* Centra los botones */
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            align-items: center;
         }
         
-        /* --- Sección Quiénes Somos (About Us) --- */
-        .about-content {
-            display: flex;
+        /* --- Sección Quiénes Somos (About Us) - AHORA UN MODAL --- */
+        /* Estilos base del modal (oculto por defecto) */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed; /* Se mantiene en la misma posición al desplazarse */
+            z-index: 2000; /* Por encima de todo lo demás */
+            left: 0;
+            top: 0;
+            width: 100%; /* Cubre todo el ancho */
+            height: 100%; /* Cubre toda la altura */
+            overflow: auto; /* Permite desplazamiento si el contenido es demasiado grande */
+            background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro semitransparente */
+            backdrop-filter: blur(8px); /* Efecto de desenfoque en el fondo */
+            -webkit-backdrop-filter: blur(8px); /* Compatibilidad con Safari */
+            justify-content: center;
             align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
+            padding: 20px;
         }
 
-        .about-text {
-            flex: 1;
-            min-width: 300px;
+        /* Contenido del modal */
+        .modal-content {
+            background-color: var(--color-fondo-oscuro);
+            margin: auto;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            max-width: 90%;
+            width: 900px;
+            position: relative;
+            color: var(--color-texto-claro); /* Letras blancas para contraste */
+            text-align: center;
+            overflow: hidden; /* Para las imágenes de fondo */
         }
 
-        .about-text h3 {
-            font-family: 'Montserrat', sans-serif;
+        .modal-content::before,
+        .modal-content::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1; /* Opacidad para el efecto difuminado */
+            filter: blur(10px); /* Desenfoque de las imágenes */
+            z-index: 0;
+            pointer-events: none; /* Permite clics a través del pseudo-elemento */
+        }
+
+        .modal-content::before {
+            background-image: url('https://via.placeholder.com/1920x1080?text=Fondo+Oriflex+Entretenimiento'); /* Imagen 1 */
+        }
+
+        .modal-content::after {
+            background-image: url('https://via.placeholder.com/1920x1080?text=Fondo+Oriflex+Inmobiliaria'); /* Imagen 2 */
+            animation: background-fade 15s infinite alternate; /* Animación de cambio de fondo */
+        }
+
+        @keyframes background-fade {
+            0% { opacity: 0.1; background-image: url('https://via.placeholder.com/1920x1080?text=Fondo+Oriflex+Inmobiliaria'); }
+            50% { opacity: 0.1; background-image: url('https://via.placeholder.com/1920x1080?text=Fondo+Oriflex+Productos'); }
+            100% { opacity: 0.1; background-image: url('https://via.placeholder.com/1920x1080?text=Fondo+Oriflex+Entretenimiento'); }
+        }
+
+        .modal-body {
+            position: relative;
+            z-index: 1; /* Asegura que el contenido esté sobre las imágenes de fondo */
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .close-button {
             color: var(--rojo-principal);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            font-weight: bold;
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            cursor: pointer;
+            transition: var(--transicion-rapida);
+            z-index: 2001; /* Asegura que esté por encima del contenido del modal */
         }
 
-        .about-image {
-            flex: 1;
-            min-width: 300px;
+        .close-button:hover,
+        .close-button:focus {
+            color: var(--rojo-claro-secundario);
+            text-decoration: none;
+            transform: scale(1.1);
+        }
+
+        .modal-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            color: var(--rojo-claro-secundario);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .modal-text {
+            font-size: 1.2rem;
+            color: var(--tono-claro); /* Texto más claro para fondos oscuros */
+            margin-bottom: 2rem;
             text-align: center;
         }
 
-        .about-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
+        .modal-categories {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap; /* Permite que las categorías se ajusten en móviles */
+        }
+
+        .modal-category-item {
+            background-color: var(--gris-oscuro);
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion-rapida);
+            text-decoration: none; /* Asegura que los enlaces no tengan subrayado por defecto */
+            color: var(--color-texto-claro); /* Color del texto del item */
+            flex: 1;
+            min-width: 250px;
+            max-width: 30%; /* Para que no se estiren demasiado */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-category-item:hover {
+            background-color: var(--rojo-principal);
+            transform: translateY(-5px);
             box-shadow: var(--sombra-fuerte);
         }
 
-        /* --- Sección Características / Por Qué Elegirnos --- */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-item {
-            text-align: center;
-            background-color: var(--tono-claro);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--sombra-suave);
-            transition: var(--transicion-rapida);
-        }
-
-        .feature-item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-        }
-
-        .feature-item .icon {
+        .modal-category-item .icon {
             font-size: 3.5rem;
-            color: var(--rojo-principal);
+            color: var(--rojo-claro-secundario);
             margin-bottom: 1rem;
         }
 
-        .feature-item h3 {
+        .modal-category-item h4 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            color: var(--gris-oscuro);
-            margin-bottom: 0.8rem;
+            font-size: 1.6rem;
+            margin: 0;
+            color: var(--color-texto-claro);
         }
 
         /* --- Sección Contacto --- */
@@ -405,7 +492,7 @@
             position: fixed;
             bottom: 25px;
             right: 25px;
-            background: #25d366; /* Color de WhatsApp */
+            background: #25d366;
             color: white;
             padding: 15px 20px;
             border-radius: 50px;
@@ -438,87 +525,102 @@
             100% { transform: translateY(0px); }
         }
 
+        /* --- Botón "Conócenos" al final del footer --- */
+        .btn-conocenos {
+            display: inline-block;
+            background-color: var(--rojo-principal);
+            color: var(--color-texto-claro);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            box-shadow: var(--sombra-fuerte);
+            transition: var(--transicion-rapida);
+            margin-top: 2rem; /* Espacio para separarlo del texto del footer */
+            cursor: pointer; /* Indicar que es cliqueable */
+        }
+
+        .btn-conocenos:hover {
+            background-color: var(--rojo-claro-secundario);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        }
+
+        /* --- Botón de Contacto Redondo y Pequeño (en la sección de contacto) --- */
+        .contact-info-block .btn-whatsapp-small {
+            display: inline-flex; /* Usar flexbox para centrar contenido */
+            justify-content: center;
+            align-items: center;
+            background-color: #25d366; /* Verde de WhatsApp */
+            color: white;
+            width: 50px; /* Tamaño del botón */
+            height: 50px; /* Tamaño del botón */
+            border-radius: 50%; /* Hacerlo redondo */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5rem; /* Icono un poco más grande */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: var(--transicion-rapida);
+            margin-top: 1rem; /* Separación del texto */
+        }
+
+        .contact-info-block .btn-whatsapp-small:hover {
+            background-color: #1da851;
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        /* Ocultar el texto dentro del botón de contacto pequeño */
+        .contact-info-block .btn-whatsapp-small span {
+            display: none;
+        }
+
+
         /* --- Responsive Design --- */
         @media (max-width: 992px) {
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-            .hero-content p.eslogan {
-                font-size: 1.2rem;
-            }
-            .section-heading {
-                font-size: 2.2rem;
-            }
-            .grid-container {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
+            .hero-content h1 { font-size: 3rem; }
+            .hero-content p.eslogan { font-size: 1.2rem; }
+            .section-heading { font-size: 2.2rem; }
+            .grid-container { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+            .modal-content { max-width: 95%; padding: 30px; }
+            .modal-heading { font-size: 2.5rem; }
+            .modal-text { font-size: 1.1rem; }
+            .modal-categories { flex-direction: column; align-items: center; }
+            .modal-category-item { max-width: 80%; }
         }
 
         @media (max-width: 768px) {
-            .hero-section {
-                padding: 3rem 1rem;
-            }
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            .hero-content p.eslogan {
-                font-size: 1rem;
-            }
-            .hero-button {
-                padding: 0.8rem 1.8rem;
-                font-size: 1rem;
-            }
-            nav {
-                flex-direction: column;
-                gap: 0;
-            }
-            nav a {
-                padding: 0.7rem 1rem;
-                font-size: 1rem;
-                text-align: center;
-            }
-            main {
-                padding: 0 1rem;
-                margin: 2rem auto;
-            }
-            .category-section, .about-section, .contact-section, .features-section {
-                padding: 2rem;
-                margin-bottom: 2rem;
-            }
-            .section-heading {
-                font-size: 2rem;
-                margin-bottom: 2rem;
-            }
-            .about-content {
-                flex-direction: column;
-            }
-            .whatsapp-float {
-                padding: 12px 18px;
-                font-size: 1rem;
-                bottom: 15px;
-                right: 15px;
-            }
-            .whatsapp-float .icon {
-                font-size: 1.3rem;
-            }
+            .hero-section { padding: 3rem 1rem; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-content p.eslogan { font-size: 1rem; }
+            .hero-button { padding: 0.8rem 1.8rem; font-size: 1rem; }
+            nav { flex-direction: column; gap: 0; }
+            nav a { padding: 0.7rem 1rem; font-size: 1rem; text-align: center; }
+            main { padding: 0 1rem; margin: 2rem auto; }
+            .category-section, .contact-section, .features-section { padding: 2rem; margin-bottom: 2rem; }
+            .section-heading { font-size: 2rem; margin-bottom: 2rem; }
+            .about-content { flex-direction: column; }
+            .whatsapp-float { padding: 12px 18px; font-size: 1rem; bottom: 15px; right: 15px; }
+            .whatsapp-float .icon { font-size: 1.3rem; }
+            .btn-conocenos { padding: 1rem 2.5rem; font-size: 1.1rem; }
+            .modal-content { padding: 20px; }
+            .modal-heading { font-size: 2rem; }
+            .modal-text { font-size: 1rem; }
+            .modal-categories { gap: 1rem; }
+            .modal-category-item { padding: 1rem; }
+            .modal-category-item .icon { font-size: 2.8rem; }
+            .modal-category-item h4 { font-size: 1.4rem; }
+            .close-button { font-size: 2.5rem; top: 10px; right: 15px; }
         }
 
         @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            .hero-content p.eslogan {
-                font-size: 0.9rem;
-            }
-            .hero-content .logo {
-                max-width: 120px;
-            }
-            .grid-item img {
-                height: 150px;
-            }
-            .grid-item h3 {
-                font-size: 1.5rem;
-            }
+            .hero-content h1 { font-size: 2rem; }
+            .hero-content p.eslogan { font-size: 0.9rem; }
+            .hero-content .logo { max-width: 120px; }
+            .grid-item img { height: 150px; }
+            .grid-item h3 { font-size: 1.5rem; }
+            .btn-conocenos { padding: 0.8rem 2rem; font-size: 1rem; }
         }
     </style>
 </head>
@@ -534,7 +636,6 @@
     </div>
 
     <nav>
-        <a href="#quienes-somos">Quiénes Somos</a>
         <a href="#entretenimiento">Entretenimiento</a>
         <a href="#inmobiliaria">Inmobiliaria</a>
         <a href="#productos">Productos</a>
@@ -543,21 +644,6 @@
     </nav>
 
     <main>
-        <section id="quienes-somos" class="about-section">
-            <h2 class="section-heading">Quiénes Somos</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Nuestra Visión en Oriflex</h3>
-                    <p>En **Oriflex**, creemos que el futuro de la interacción digital está en la convergencia. Somos una plataforma innovadora dedicada a redefinir la forma en que las personas **viven, compran y se entretienen**.</p>
-                    <p>Combinamos tecnología de vanguardia con un enfoque centrado en el usuario para ofrecer experiencias sin fisuras en tres pilares fundamentales: **Entretenimiento, Inmobiliaria y Productos.** Nos esforzamos por ser tu compañero integral en el mundo digital, simplificando tus necesidades diarias y elevando tus momentos de ocio y negocio.</p>
-                    <p>Nuestra misión es empoderar a nuestros usuarios con herramientas y servicios que mejoren su calidad de vida y les permitan tomar decisiones informadas y disfrutar al máximo.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://via.placeholder.com/600x400?text=Equipo+Oriflex+Profesional" alt="Equipo Oriflex trabajando">
-                </div>
-            </div>
-        </section>
-
         <section id="entretenimiento" class="category-section">
             <h2 class="section-heading">Entretenimiento</h2>
             <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem; color: var(--texto-general);">Sumérgete en un mundo de diversión y contenido exclusivo. Oriflex te trae las últimas novedades para que nunca te aburras.</p>
@@ -705,7 +791,9 @@
                     <span class="icon">📞</span>
                     <h3>WhatsApp Directo</h3>
                     <p>Contáctanos al instante para una atención personalizada.</p>
-                    <p><a href="https://wa.me/51910104404" target="_blank">+51 910 104 404</a></p>
+                    <a href="https://wa.me/51910104404" target="_blank" class="btn-whatsapp-small">
+                        💬<span>Chatea</span>
+                    </a>
                 </div>
                 <div class="contact-info-block">
                     <span class="icon">📍</span>
@@ -721,19 +809,53 @@
         </section>
     </main>
 
+    <footer>
+        <p>&copy; 2025 Oriflex. Todos los derechos reservados.</p>
+        <p>Potenciando tu vida digital.</p>
+        <button id="openAboutModal" class="btn-conocenos">Conócenos</button>
+    </footer>
+
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-body">
+                <h2 class="modal-heading">Quiénes Somos</h2>
+                <p class="modal-text">En **Oriflex**, creemos que el futuro de la interacción digital está en la convergencia. Somos una plataforma innovadora dedicada a redefinir la forma en que las personas **viven, compran y se entretienen**.</p>
+                <p class="modal-text">Combinamos tecnología de vanguardia con un enfoque centrado en el usuario para ofrecer experiencias sin fisuras en tres pilares fundamentales: **Entretenimiento, Inmobiliaria y Productos.** Nos esforzamos por ser tu compañero integral en el mundo digital, simplificando tus necesidades diarias y elevando tus momentos de ocio y negocio.</p>
+                <p class="modal-text">Nuestra misión es empoderar a nuestros usuarios con herramientas y servicios que mejoren su calidad de vida y les permitan tomar decisiones informadas y disfrutar al máximo.</p>
+                
+                <h3 class="modal-heading" style="font-size: 2.2rem; margin-top: 3rem;">Explora Nuestras Áreas</h3>
+                <div class="modal-categories">
+                    <a href="#entretenimiento" class="modal-category-item" data-close-modal="true">
+                        <span class="icon">🎬</span>
+                        <h4>Entretenimiento</h4>
+                    </a>
+                    <a href="#inmobiliaria" class="modal-category-item" data-close-modal="true">
+                        <span class="icon">🏠</span>
+                        <h4>Inmobiliaria</h4>
+                    </a>
+                    <a href="#productos" class="modal-category-item" data-close-modal="true">
+                        <span class="icon">🛍️</span>
+                        <h4>Productos</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <a href="https://wa.me/51910104404" class="whatsapp-float" target="_blank">
         <span class="icon">💬</span> Chatea con nosotros
     </a>
 
-    <footer>
-        <p>&copy; 2025 Oriflex. Todos los derechos reservados.</p>
-        <p>Potenciando tu vida digital.</p>
-    </footer>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const navLinks = document.querySelectorAll('nav a');
+            const aboutModal = document.getElementById('aboutModal');
+            const openAboutModalBtn = document.getElementById('openAboutModal');
+            const closeButton = aboutModal.querySelector('.close-button');
+            const modalCategoryItems = aboutModal.querySelectorAll('.modal-category-item');
 
+            // Funcionalidad de la barra de navegación (se mantiene igual)
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     navLinks.forEach(nav => nav.classList.remove('active'));
@@ -741,13 +863,12 @@
                 });
             });
 
-            // Función para resaltar el enlace activo al desplazarse
             const sections = document.querySelectorAll('main section');
             window.addEventListener('scroll', () => {
                 let current = '';
+                const nav = document.querySelector('nav'); // Asegúrate de que 'nav' esté definido
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
-                    // Ajusta este valor si tu barra de navegación es muy alta
                     if (pageYOffset >= sectionTop - nav.offsetHeight - 50) { 
                         current = '#' + section.getAttribute('id');
                     }
@@ -761,12 +882,54 @@
                 });
             });
 
-            // Set active link on page load for the initial section (e.g., #quienes-somos)
-            const initialHash = window.location.hash || '#quienes-somos';
+            const initialHash = window.location.hash || '#entretenimiento'; // Cambiado a Entretenimiento como inicio
             const initialActiveLink = document.querySelector(`nav a[href="${initialHash}"]`);
             if (initialActiveLink) {
                 initialActiveLink.classList.add('active');
             }
+
+            // --- Funcionalidad del Modal "Quiénes Somos" ---
+            // Abrir el modal
+            openAboutModalBtn.addEventListener('click', () => {
+                aboutModal.style.display = 'flex'; // Usar flex para centrar
+                document.body.style.overflow = 'hidden'; // Evita el scroll del fondo
+            });
+
+            // Cerrar el modal con el botón X
+            closeButton.addEventListener('click', () => {
+                aboutModal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Habilita el scroll del fondo
+            });
+
+            // Cerrar el modal al hacer clic fuera del contenido
+            window.addEventListener('click', (event) => {
+                if (event.target == aboutModal) {
+                    aboutModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Cerrar el modal y navegar al hacer clic en las categorías internas
+            modalCategoryItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    // Cierra el modal solo si el enlace no tiene un target="_blank"
+                    if (!item.hasAttribute('target') || item.getAttribute('target') !== '_blank') {
+                        aboutModal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                        // Opcional: desplázate a la sección si el navegador no lo hace automáticamente
+                        const targetId = item.getAttribute('href');
+                        if (targetId.startsWith('#')) {
+                            const targetSection = document.querySelector(targetId);
+                            if (targetSection) {
+                                // Pequeño retraso para permitir que el modal se cierre antes de scroll
+                                setTimeout(() => {
+                                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                                }, 100); 
+                            }
+                        }
+                    }
+                });
+            });
         });
     </script>
 </body>
