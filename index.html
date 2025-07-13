@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,173 +6,435 @@
     <title>Oriflex | La nueva forma de vivir, comprar y entretener</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primario: #007bff; /* Azul moderno */
-            --secundario: #f0f4f8; /* Gris claro para fondos */
-            --texto-oscuro: #333;
-            --texto-claro: #f8f9fa;
-            --borde: #ddd;
-            --sombra-suave: 0 4px 12px rgba(0,0,0,0.08);
-            --transicion: all 0.3s ease;
+            --rojo-principal: #DD0622;
+            --rojo-claro-secundario: #FF734F;
+            --tono-claro: #D7BFBD;
+            --gris-oscuro: #262F34;
+            --texto-general: #333; /* Un gris oscuro para legibilidad */
+            --sombra-fuerte: 0 8px 25px rgba(0,0,0,0.15);
+            --sombra-suave: 0 4px 15px rgba(0,0,0,0.08);
+            --transicion-rapida: all 0.3s ease;
         }
 
         body {
             margin: 0;
             font-family: 'Open Sans', sans-serif;
-            background-color: var(--secundario);
-            color: var(--texto-oscuro);
+            background-color: var(--tono-claro); /* Fondo claro de la marca */
+            color: var(--texto-general);
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        header {
-            background-color: var(--texto-oscuro);
-            padding: 2rem 1.5rem;
+        /* --- Header y Hero Section --- */
+        .hero-section {
+            background-color: var(--gris-oscuro);
+            color: white;
+            padding: 4rem 1.5rem;
             text-align: center;
-            color: var(--texto-claro);
+            position: relative;
+            overflow: hidden;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1920x600?text=Fondo+Inspirador+Oriflex'); /* Imagen de fondo para el hero */
+            background-size: cover;
+            background-position: center;
         }
 
-        header .logo {
-            max-width: 150px;
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, var(--rojo-principal), var(--rojo-claro-secundario)); /* Degradado de colores de la marca */
+            opacity: 0.2; /* Opacidad para que se vea la imagen de fondo */
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-content .logo {
+            max-width: 180px;
             height: auto;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.5)); /* Sombra para el logo */
         }
 
-        header h1 {
+        .hero-content h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 3rem;
-            margin: 0.5rem 0;
+            font-size: 3.8rem;
+            margin: 0.5rem 0 1rem;
+            color: var(--rojo-claro-secundario); /* Color de la marca */
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
         }
 
-        header p.eslogan {
+        .hero-content p.eslogan {
             font-style: italic;
-            font-size: 1.2rem;
-            opacity: 0.8;
-            margin: 0;
+            font-size: 1.4rem;
+            opacity: 0.95;
+            margin: 0 0 2rem;
+            color: var(--tono-claro);
         }
 
+        .hero-button {
+            display: inline-block;
+            background-color: var(--rojo-principal);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: var(--sombra-fuerte);
+            transition: var(--transicion-rapida);
+            animation: pulse 2s infinite; /* Animación para el botón CTA */
+        }
+
+        .hero-button:hover {
+            background-color: var(--rojo-claro-secundario);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+            animation: none; /* Detiene la animación al pasar el mouse */
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        /* --- Barra de Navegación --- */
         nav {
-            background-color: var(--primario);
+            background-color: var(--rojo-principal);
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            padding: 1.2rem 0;
+            gap: 2.5rem;
+            padding: 1rem 0;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky; /* Sticky nav */
+            top: 0;
+            z-index: 1000;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             font-family: 'Montserrat', sans-serif;
             font-size: 1.1rem;
-            padding: 0.5rem 1rem;
-            transition: var(--transicion);
+            padding: 0.8rem 1.2rem;
+            transition: var(--transicion-rapida);
             border-radius: 5px;
         }
 
         nav a:hover, nav a.active {
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
+            background-color: var(--rojo-claro-secundario);
+            transform: translateY(-3px);
         }
 
+        /* --- Main Content Sections --- */
         main {
             max-width: 1200px;
             margin: 3rem auto;
             padding: 0 1.5rem;
         }
 
-        .category-section {
-            background-color: white;
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
-            border-radius: 12px;
-            box-shadow: var(--sombra-suave);
-        }
-        
-        .category-section h2 {
+        .section-heading {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.2rem;
-            color: var(--primario);
-            border-bottom: 3px solid var(--primario);
-            padding-bottom: 0.5rem;
-            margin-bottom: 2rem;
+            font-size: 2.8rem;
+            color: var(--rojo-principal);
             text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-heading::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--rojo-claro-secundario);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .category-section, .about-section, .contact-section, .features-section {
+            background-color: white;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--sombra-fuerte);
         }
         
+        /* --- Grid de Contenido (Categorías y Características) --- */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
         
         .grid-item {
-            background-color: var(--secundario);
-            border: 1px solid var(--borde);
+            background-color: var(--tono-claro);
+            border: 1px solid rgba(0,0,0,0.05);
             border-radius: 10px;
             padding: 1.5rem;
             text-align: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion-rapida);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .grid-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
         }
         
         .grid-item img {
             max-width: 100%;
+            height: 200px; /* Altura fija para uniformidad */
+            object-fit: cover; /* Asegura que la imagen cubra el espacio */
             border-radius: 8px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             display: block;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .grid-item h3 {
-            font-size: 1.5rem;
-            margin: 0.5rem 0;
-            color: var(--texto-oscuro);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            margin: 0.5rem 0 1rem;
+            color: var(--rojo-principal);
         }
         
         .grid-item p {
-            font-size: 0.95rem;
-            color: #666;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: var(--texto-general);
+            margin-bottom: 1.5rem;
+            flex-grow: 1; /* Permite que el párrafo crezca para alinear botones */
         }
         
         .btn-ver-mas {
             display: inline-block;
-            background-color: var(--primario);
+            background-color: var(--gris-oscuro); /* Botón con color oscuro */
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 0.8rem 1.8rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            transition: var(--transicion);
-            font-size: 0.9rem;
+            transition: var(--transicion-rapida);
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .btn-ver-mas:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
+            background-color: var(--rojo-claro-secundario);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
 
+        /* --- Sección Quiénes Somos (About Us) --- */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--rojo-principal);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: var(--sombra-fuerte);
+        }
+
+        /* --- Sección Características / Por Qué Elegirnos --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            background-color: var(--tono-claro);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion-rapida);
+        }
+
+        .feature-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-item .icon {
+            font-size: 3.5rem;
+            color: var(--rojo-principal);
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--gris-oscuro);
+            margin-bottom: 0.8rem;
+        }
+
+        /* --- Sección Contacto --- */
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .contact-info-block {
+            background-color: var(--tono-claro);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--sombra-suave);
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+            transition: var(--transicion-rapida);
+        }
+
+        .contact-info-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-info-block .icon {
+            font-size: 3rem;
+            color: var(--rojo-principal);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-block h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            color: var(--gris-oscuro);
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-info-block p, .contact-info-block a {
+            color: var(--texto-general);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .contact-info-block a:hover {
+            text-decoration: underline;
+            color: var(--rojo-claro-secundario);
+        }
+
+        /* --- Footer --- */
         footer {
             text-align: center;
-            padding: 2rem;
-            background: var(--texto-oscuro);
-            color: var(--texto-claro);
+            padding: 2.5rem;
+            background: var(--gris-oscuro);
+            color: white;
             margin-top: 3rem;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
+        /* --- Botón WhatsApp Flotante --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25d366; /* Color de WhatsApp */
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transicion-rapida);
+            font-size: 1.1rem;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .whatsapp-float:hover {
+            background: #1da851;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            animation: none;
+        }
+
+        .whatsapp-float .icon {
+            font-size: 1.6rem;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3rem;
             }
-            header p.eslogan {
+            .hero-content p.eslogan {
+                font-size: 1.2rem;
+            }
+            .section-heading {
+                font-size: 2.2rem;
+            }
+            .grid-container {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 3rem 1rem;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-content p.eslogan {
+                font-size: 1rem;
+            }
+            .hero-button {
+                padding: 0.8rem 1.8rem;
                 font-size: 1rem;
             }
             nav {
@@ -181,112 +442,298 @@
                 gap: 0;
             }
             nav a {
-                padding: 1rem;
+                padding: 0.7rem 1rem;
+                font-size: 1rem;
                 text-align: center;
             }
             main {
                 padding: 0 1rem;
+                margin: 2rem auto;
             }
-            .category-section {
-                padding: 1.5rem;
+            .category-section, .about-section, .contact-section, .features-section {
+                padding: 2rem;
+                margin-bottom: 2rem;
             }
-            .grid-item {
-                padding: 1rem;
+            .section-heading {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+            .about-content {
+                flex-direction: column;
+            }
+            .whatsapp-float {
+                padding: 12px 18px;
+                font-size: 1rem;
+                bottom: 15px;
+                right: 15px;
+            }
+            .whatsapp-float .icon {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content p.eslogan {
+                font-size: 0.9rem;
+            }
+            .hero-content .logo {
+                max-width: 120px;
+            }
+            .grid-item img {
+                height: 150px;
+            }
+            .grid-item h3 {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="URL_DEL_LOGO_AQUI" alt="Logo de Oriflex" class="logo">
-        <h1>Oriflex</h1>
-        <p class="eslogan">La nueva forma de vivir, comprar y entretener.</p>
-    </header>
+    <div class="hero-section">
+        <div class="hero-content">
+            <img src="URL_DE_TU_LOGO_AQUI.png" alt="Logo de Oriflex" class="logo">
+            <h1>Oriflex</h1>
+            <p class="eslogan">La nueva forma de vivir, comprar y entretener.</p>
+            <a href="#contacto" class="hero-button">¡Contáctanos y empieza tu experiencia!</a>
+        </div>
+    </div>
 
     <nav>
+        <a href="#quienes-somos">Quiénes Somos</a>
         <a href="#entretenimiento">Entretenimiento</a>
         <a href="#inmobiliaria">Inmobiliaria</a>
         <a href="#productos">Productos</a>
+        <a href="#por-que-elegirnos">Por Qué Elegirnos</a>
+        <a href="#contacto">Contacto</a>
     </nav>
 
     <main>
+        <section id="quienes-somos" class="about-section">
+            <h2 class="section-heading">Quiénes Somos</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Nuestra Visión en Oriflex</h3>
+                    <p>En **Oriflex**, creemos que el futuro de la interacción digital está en la convergencia. Somos una plataforma innovadora dedicada a redefinir la forma en que las personas **viven, compran y se entretienen**.</p>
+                    <p>Combinamos tecnología de vanguardia con un enfoque centrado en el usuario para ofrecer experiencias sin fisuras en tres pilares fundamentales: **Entretenimiento, Inmobiliaria y Productos.** Nos esforzamos por ser tu compañero integral en el mundo digital, simplificando tus necesidades diarias y elevando tus momentos de ocio y negocio.</p>
+                    <p>Nuestra misión es empoderar a nuestros usuarios con herramientas y servicios que mejoren su calidad de vida y les permitan tomar decisiones informadas y disfrutar al máximo.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/600x400?text=Equipo+Oriflex+Profesional" alt="Equipo Oriflex trabajando">
+                </div>
+            </div>
+        </section>
+
         <section id="entretenimiento" class="category-section">
-            <h2>Entretenimiento</h2>
+            <h2 class="section-heading">Entretenimiento</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem; color: var(--texto-general);">Sumérgete en un mundo de diversión y contenido exclusivo. Oriflex te trae las últimas novedades para que nunca te aburras.</p>
             <div class="grid-container">
                 <div class="grid-item">
-                    <img src="https://via.placeholder.com/400x250?text=Pel%C3%ADculas+y+Series" alt="Películas y Series">
-                    <h3>Películas y Series</h3>
-                    <p>Accede al mejor contenido audiovisual para disfrutar en familia o con amigos.</p>
-                    <a href="#" class="btn-ver-mas">Ver más</a>
+                    <img src="https://via.placeholder.com/400x250?text=Streaming+Pel%C3%ADculas+Series" alt="Películas y Series">
+                    <h3>Películas y Series On-Demand</h3>
+                    <p>Accede a un catálogo ilimitado de tus películas y series favoritas. Estrenos, clásicos y contenido exclusivo.</p>
+                    <a href="URL_A_PAGINA_ENTRETENIMIENTO_PELICULAS.html" class="btn-ver-mas">Explorar</a>
                 </div>
                 <div class="grid-item">
-                    <img src="https://via.placeholder.com/400x250?text=Eventos+en+Vivo" alt="Eventos en Vivo">
-                    <h3>Eventos en Vivo</h3>
-                    <p>Descubre los eventos más emocionantes y compra tus entradas fácilmente.</p>
-                    <a href="#" class="btn-ver-mas">Ver más</a>
+                    <img src="https://via.placeholder.com/400x250?text=Eventos+Deportivos+Conciertos" alt="Eventos en Vivo">
+                    <h3>Eventos y Conciertos en Vivo</h3>
+                    <p>No te pierdas nada. Boletos para conciertos, deportes, teatro y experiencias únicas al instante.</p>
+                    <a href="URL_A_PAGINA_ENTRETENIMIENTO_EVENTOS.html" class="btn-ver-mas">Comprar Entradas</a>
                 </div>
                 <div class="grid-item">
-                    <img src="https://via.placeholder.com/400x250?text=Juegos+y+Apps" alt="Juegos y Apps">
-                    <h3>Juegos y Apps</h3>
-                    <p>Explora un universo de diversión con nuestras aplicaciones y juegos exclusivos.</p>
-                    <a href="#" class="btn-ver-mas">Ver más</a>
+                    <img src="https://via.placeholder.com/400x250?text=Videojuegos+Consolas" alt="Juegos y Apps">
+                    <h3>Videojuegos y Plataformas Gaming</h3>
+                    <p>La mejor selección de videojuegos, noticias, reseñas y acceso a comunidades de jugadores.</p>
+                    <a href="URL_A_PAGINA_ENTRETENIMIENTO_JUEGOS.html" class="btn-ver-mas">Descubrir Juegos</a>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/400x250?text=Noticias+Entretenimiento" alt="Noticias y Contenido Original">
+                    <h3>Noticias y Contenido Original</h3>
+                    <p>Mantente informado con las últimas tendencias del mundo del entretenimiento y producciones propias.</p>
+                    <a href="URL_A_PAGINA_ENTRETENIMIENTO_NOTICIAS.html" class="btn-ver-mas">Leer Más</a>
                 </div>
             </div>
         </section>
 
         <section id="inmobiliaria" class="category-section">
-            <h2>Inmobiliaria</h2>
+            <h2 class="section-heading">Inmobiliaria</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem; color: var(--texto-general);">Encuentra tu espacio ideal. Oriflex te conecta con las propiedades que se adaptan a tu vida y tus proyectos.</p>
             <div class="grid-container">
                 <div class="grid-item">
-                    <img src="https://via.placeholder.com/400x250?text=Venta+de+Propiedades" alt="Venta de Propiedades">
-                    <h3>Venta de Propiedades</h3>
-                    <p>Encuentra la casa de tus sueños. Te ayudamos en cada paso del proceso.</p>
-                    <a href="#" class="btn-ver-mas">Ver más</a>
+                    <img src="https://via.placeholder.com/400x250?text=Casas+Venta" alt="Venta de Propiedades">
+                    <h3>Venta de Casas y Apartamentos</h3>
+                    <p>Amplia oferta de propiedades en venta. Busca por ubicación, precio y características.</p>
+                    <a href="URL_A_PAGINA_INMOBILIARIA_VENTA.html" class="btn-ver-mas">Ver Propiedades</a>
                 </div>
                 <div class="grid-item">
-                    <img src="https://via.placeholder.com/400x250?text=Alquiler+de+Apartamentos" alt="Alquiler de Apartamentos">
-                    <h3>Alquiler de Apartamentos</h3>
-                    <p>Descubre las mejores opciones de alquiler para vivir cómodamente.</p>
-                    <a href="#" class="btn-ver-mas">Ver más</a>
+                    <img src="https://via.placeholder.com/400x250?text=Alquiler+Inmuebles" alt="Alquiler de Apartamentos">
+                    <h3>Alquileres Residenciales y Comerciales</h3>
+                    <p>Opciones de alquiler para todos los estilos de vida y necesidades de negocio. Facilidad y rapidez.</p>
+                    <a href="URL_A_PAGINA_INMOBILIARIA_ALQUILER.html" class="btn-ver-mas">Buscar Alquiler</a>
                 </div>
                 <div class="grid-item">
-                    <img src="https://via.placeholder.com/400x250?text=Oficinas+y+Locales" alt="Oficinas y Locales">
-                    <h3>Oficinas y Locales</h3>
-                    <p>Espacios comerciales perfectos para hacer crecer tu negocio.</p>
-                    <a href="#" class="btn-ver-mas">Ver más</a>
+                    <img src="https://via.placeholder.com/400x250?text=Proyectos+Nuevos" alt="Proyectos Inmobiliarios">
+                    <h3>Proyectos Inmobiliarios Nuevos</h3>
+                    <p>Invierte en el futuro. Descubre desarrollos en construcción con diseños innovadores y amenidades.</p>
+                    <a href="URL_A_PAGINA_INMOBILIARIA_PROYECTOS.html" class="btn-ver-mas">Conocer Proyectos</a>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/400x250?text=Asesoria+Inmobiliaria" alt="Asesoría y Valoración">
+                    <h3>Asesoría y Valoración Inmobiliaria</h3>
+                    <p>Expertos a tu disposición para asesorarte en la compra, venta o valoración de tu inmueble.</p>
+                    <a href="URL_A_PAGINA_INMOBILIARIA_ASESORIA.html" class="btn-ver-mas">Solicitar Asesoría</a>
                 </div>
             </div>
         </section>
 
         <section id="productos" class="category-section">
-            <h2>Productos</h2>
+            <h2 class="section-heading">Productos</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem; color: var(--texto-general);">Explora un marketplace diverso con todo lo que necesitas, desde tecnología hasta moda y hogar. Calidad y variedad al alcance de tu mano.</p>
             <div class="grid-container">
                 <div class="grid-item">
-                    <img src="https://via.placeholder.com/400x250?text=Electr%C3%B3nica" alt="Electrónica">
-                    <h3>Electrónica</h3>
-                    <p>Lo último en tecnología, desde smartphones hasta dispositivos inteligentes para el hogar.</p>
-                    <a href="#" class="btn-ver-mas">Ver más</a>
+                    <img src="https://via.placeholder.com/400x250?text=Electr%C3%B3nica+y+Gadgets" alt="Electrónica">
+                    <h3>Electrónica y Gadgets</h3>
+                    <p>Las últimas innovaciones tecnológicas. Smartphones, laptops, wearables y dispositivos inteligentes.</p>
+                    <a href="URL_A_PAGINA_PRODUCTOS_ELECTRONICA.html" class="btn-ver-mas">Ver Catálogo</a>
                 </div>
                 <div class="grid-item">
-                    <img src="https://via.placeholder.com/400x250?text=Moda" alt="Moda">
-                    <h3>Moda</h3>
-                    <p>Las tendencias más actuales para renovar tu estilo. Ropa, calzado y accesorios.</p>
-                    <a href="#" class="btn-ver-mas">Ver más</a>
+                    <img src="https://via.placeholder.com/400x250?text=Moda+Ropa+Calzado" alt="Moda">
+                    <h3>Moda, Ropa y Calzado</h3>
+                    <p>Descubre las tendencias más recientes en indumentaria para todas las edades y estilos.</p>
+                    <a href="URL_A_PAGINA_PRODUCTOS_MODA.html" class="btn-ver-mas">Explorar Moda</a>
                 </div>
                 <div class="grid-item">
-                    <img src="https://via.placeholder.com/400x250?text=Hogar" alt="Hogar">
-                    <h3>Hogar</h3>
-                    <p>Todo lo que necesitas para crear un espacio acogedor y funcional.</p>
-                    <a href="#" class="btn-ver-mas">Ver más</a>
+                    <img src="https://via.placeholder.com/400x250?text=Hogar+y+Decoracion" alt="Hogar">
+                    <h3>Hogar y Decoración</h3>
+                    <p>Muebles, electrodomésticos y accesorios para transformar tu hogar en un espacio único y funcional.</p>
+                    <a href="URL_A_PAGINA_PRODUCTOS_HOGAR.html" class="btn-ver-mas">Ver Artículos</a>
                 </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/400x250?text=Salud+Belleza" alt="Salud y Belleza">
+                    <h3>Salud y Belleza</h3>
+                    <p>Productos de cuidado personal, cosméticos, suplementos y todo para tu bienestar.</p>
+                    <a href="URL_A_PAGINA_PRODUCTOS_SALUD.html" class="btn-ver-mas">Comprar Ahora</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="por-que-elegirnos" class="features-section">
+            <h2 class="section-heading">¿Por Qué Elegir Oriflex?</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem; color: var(--texto-general);">Te ofrecemos una experiencia única y sin complicaciones para todas tus necesidades.</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="icon">✨</span>
+                    <h3>Innovación Constante</h3>
+                    <p>Siempre a la vanguardia con las últimas tecnologías y tendencias para ofrecerte lo mejor.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">✅</span>
+                    <h3>Plataforma Integrada</h3>
+                    <p>Accede a Entretenimiento, Inmobiliaria y Productos desde un solo lugar, con total fluidez.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🔒</span>
+                    <h3>Seguridad y Confianza</h3>
+                    <p>Tus datos y transacciones están protegidos con los más altos estándares de seguridad.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🤝</span>
+                    <h3>Soporte Personalizado</h3>
+                    <p>Nuestro equipo está listo para asistirte en cada paso, brindándote soluciones rápidas y efectivas.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🌐</span>
+                    <h3>Alcance Global</h3>
+                    <p>Conectamos personas y oportunidades sin fronteras, expandiendo tus posibilidades.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">⭐</span>
+                    <h3>Experiencia de Usuario Superior</h3>
+                    <p>Diseño intuitivo y funcionalidades optimizadas para una navegación fácil y agradable.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact-section">
+            <h2 class="section-heading">Hablemos de tus Necesidades</h2>
+            <p style="text-align: center; margin-bottom: 2.5rem; font-size: 1.1rem; color: var(--texto-general);">Estamos aquí para responder tus preguntas y ayudarte a encontrar exactamente lo que buscas.</p>
+            <div class="contact-content">
+                <div class="contact-info-block">
+                    <span class="icon">📧</span>
+                    <h3>Correo Electrónico</h3>
+                    <p>Envíanos un mensaje y te responderemos a la brevedad.</p>
+                    <p><a href="mailto:info@oriflex.xyz">info@oriflex.xyz</a></p>
+                </div>
+                <div class="contact-info-block">
+                    <span class="icon">📞</span>
+                    <h3>WhatsApp Directo</h3>
+                    <p>Contáctanos al instante para una atención personalizada.</p>
+                    <p><a href="https://wa.me/51910104404" target="_blank">+51 910 104 404</a></p>
+                </div>
+                <div class="contact-info-block">
+                    <span class="icon">📍</span>
+                    <h3>Ubicación</h3>
+                    <p>Oficinas centrales en:</p>
+                    <p>Trujillo, La Libertad, Perú</p>
+                    <p>Atención virtual disponible globalmente.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2.5rem;">
+                <p style="font-style: italic; color: var(--texto-general);">También puedes rellenar nuestro formulario online (próximamente).</p>
             </div>
         </section>
     </main>
 
+    <a href="https://wa.me/51910104404" class="whatsapp-float" target="_blank">
+        <span class="icon">💬</span> Chatea con nosotros
+    </a>
+
     <footer>
         <p>&copy; 2025 Oriflex. Todos los derechos reservados.</p>
+        <p>Potenciando tu vida digital.</p>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav a');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    navLinks.forEach(nav => nav.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Función para resaltar el enlace activo al desplazarse
+            const sections = document.querySelectorAll('main section');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    // Ajusta este valor si tu barra de navegación es muy alta
+                    if (pageYOffset >= sectionTop - nav.offsetHeight - 50) { 
+                        current = '#' + section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Set active link on page load for the initial section (e.g., #quienes-somos)
+            const initialHash = window.location.hash || '#quienes-somos';
+            const initialActiveLink = document.querySelector(`nav a[href="${initialHash}"]`);
+            if (initialActiveLink) {
+                initialActiveLink.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
