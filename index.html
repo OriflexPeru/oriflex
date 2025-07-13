@@ -2,67 +2,57 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Oriflex | Soluciones Innovadoras</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oriflex | Soluciones</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-      color: #333;
+    :root {
+      --rojo: #DD0622;
+      --rojo-claro: #FF734F;
+      --claro: #D7BFBD;
+      --oscuro: #262F34;
     }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--claro);
+      color: var(--oscuro);
+    }
+
     header {
-      background: #0066cc;
-      color: white;
+      background-color: var(--oscuro);
       padding: 1.5rem;
       text-align: center;
+      color: white;
     }
+
+    nav {
+      background-color: var(--rojo);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--rojo-claro);
+    }
+
     main {
       max-width: 800px;
       margin: 2rem auto;
-      padding: 1rem;
-      background: white;
+      background-color: white;
+      padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      color: #666;
+
+    h1, h2 {
+      color: var(--rojo);
     }
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Bienvenido a Oriflex</h1>
-    <p>Soluciones para tu empresa con dominio propio.</p>
-  </header>
-
-  <main>
-    <h2>¿Quiénes somos?</h2>
-    <p>Oriflex ofrece soluciones digitales, correo empresarial, diseño web y más.</p>
-
-    <h2>Contacto</h2>
-    <p>📧 Escríbenos: <a href="mailto:info@oriflex.xyz">info@oriflex.xyz</a></p>
-    <p>📱 WhatsApp: <a href="https://wa.me/51910104404" target="_blank">Contáctanos ahora</a></p>
-  </main>
-
-  <a class="whatsapp" href="https://wa.me/51910104404" target="_blank">💬 WhatsApp</a>
-
-  <footer>
-    &copy; 2025 Oriflex. Todos los derechos reservados.
-  </footer>
-</body>
-</html>
